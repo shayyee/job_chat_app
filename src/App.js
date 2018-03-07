@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 // 装饰器写法
 @connect(
   // 需要state里的什么属性放到props
-  state=>({num:state}),
+  state=>({num:state.counter}),
   // 需要什么action放到props 自动dispatch
   {addAction, removeAction, addAsync})
 class App extends Component{
