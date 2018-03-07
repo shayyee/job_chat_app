@@ -17,12 +17,13 @@ import {
 import reducers from './reducers'
 import Auth from './Auth'
 import Dashboard from './Dashboard'
+import './config'
 
 const store = createStore(reducers, compose(
   applyMiddleware(thunk),
   window.devToolsExtension ? window.devToolsExtension(): ()=>{}// redux调试插件
 ))
-console.log(store.getState());
+// console.log(store.getState());
 // class Test extends React.Component{
 //   render() {
 //     console.log(this.props)

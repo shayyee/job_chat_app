@@ -11,8 +11,22 @@ mongoose.connect(DB_URL)
 mongoose.connection.on('connected', function () {
   console.log('mongo connect success')
 })
-app.get('/', function (req, res) {
-  res.send('<h1>Hello</h1>')
+const User = mongoose.model('User', new mongoose.Schema({
+  user: {
+    type: String,
+    require: true
+  },
+  age: {
+    type: Number,
+    require: true
+  }
+}))
+app.get('/data', function (req, res) {
+  User.findOne({}, function (err, doc) {
+    if(!err) {
+      res.json(doc)
+    }
+  })
 })
 app.listen(3001, function () {
   console.log('Node app start on port 3001')
