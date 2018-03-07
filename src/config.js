@@ -2,7 +2,7 @@
  * Created by lenovo on 2018/3/7.
  */
 import axios from 'axios'
-import { Toast } from 'antd-mobile'
+import {Toast} from 'antd-mobile'
 
 // 拦截请求
 axios.interceptors.request.use(function (config) {
@@ -12,8 +12,6 @@ axios.interceptors.request.use(function (config) {
 
 //拦截响应
 axios.interceptors.response.use(function (config) {
-  setTimeout(function () {
-    Toast.hide()
-  }, 2000)
+  Toast.hide()
   return config
 })
