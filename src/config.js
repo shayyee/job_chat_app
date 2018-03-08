@@ -4,6 +4,9 @@
 import axios from 'axios'
 import {Toast} from 'antd-mobile'
 
+axios.defaults.baseURL = 'http://localhost:9003'
+axios.defaults.withCredentials = true
+//axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 // 拦截请求
 axios.interceptors.request.use(function (config) {
   Toast.loading('加载中...', 0)

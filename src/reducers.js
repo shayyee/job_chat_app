@@ -3,7 +3,7 @@
  */
 
 import { combineReducers } from 'redux'
-
+import { user } from "./redux/user.redux"
 // 合并所有reducer
 
-export default combineReducers({})
+export default combineReducers({user})

@@ -8,9 +8,9 @@ import { withRouter } from 'react-router-dom'
 @withRouter
 class AuthRoute extends Component{
   componentDidMount() {
-    const publicList = ['/login','register']
+    const publicList = ['/login','/register']
     const pathname = this.props.location.pathname
-    if(publicList.indexOf(pathname)!==-1) {
+    if(publicList.indexOf(pathname) > -1) {
       return null
     }
     // 获取用户信息
@@ -20,8 +20,9 @@ class AuthRoute extends Component{
           // 有登录信息的
         } else {
           // 无登录信息
-          console.log(this.props.history)
+          this.props.history.push('/login')
         }
+        console.log(response.data)
       }
     })
     // 是否登陆
@@ -31,9 +32,7 @@ class AuthRoute extends Component{
     // 用户是否完善信息 （选择头像 个人简介）
   }
   render(){
-    return (
-      <h2>AuthRoute</h2>
-    )
+    return null
   }
 }
 
