@@ -1,11 +1,17 @@
 /**
  * Created by lenovo on 2018/1/19.
  */
-import React, { Component } from 'react'
+import { Component } from 'react'
 import axios from 'axios'
 import { withRouter } from 'react-router-dom'
+import {loadData} from "../../redux/user.redux"
+import {connect} from 'react-redux'
 
 @withRouter
+@connect(
+    null,
+    {loadData}
+)
 class AuthRoute extends Component{
   componentDidMount() {
     const publicList = ['/login','/register']
@@ -18,6 +24,7 @@ class AuthRoute extends Component{
       if(response.status === 200) {
         if(response.data.code === 0) {
           // 有登录信息的
+          this.props.loadData(response.data.data)
         } else {
           // 无登录信息
           this.props.history.push('/login')

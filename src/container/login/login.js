@@ -45,9 +45,9 @@ class Login extends Component{
               onChange={val=>this.handleChange('pwd',val)}>密码</InputItem>
           </List>
           <WhiteSpace/>
-          <Button onClick={this.handleLogin.bind(this)} type="primary">登录</Button>
+          <Button style={{ backgroundColor: '#ff9fb7' }} onClick={this.handleLogin.bind(this)} type="primary">登录</Button>
           <WhiteSpace/>
-          <Button onClick={this.register.bind(this)} type="primary">注册</Button>
+          <Button style={{ backgroundColor: '#ff9fb7' }} onClick={this.register.bind(this)} type="primary">注册</Button>
         </WingBlank>
       </div>
     )

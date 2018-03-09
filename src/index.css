@@ -2,3 +2,6 @@
     color: red;
     padding-left:10px;
 }
+html:not([data-scale]) .am-button-primary::before {
+    border:0 !important;
+}
